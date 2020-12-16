@@ -40,13 +40,25 @@
     <!-- Ini Form Registrasi Hotel -->
     <div class="container">
         <div class="content">
-            <h1 style="text-align: center;">Daftarkan Hotel Anda Disini</h1>
+            <h1 style="text-align: center;">Daftarkan Akomodasi Anda Disini</h1>
             <br />
-            <form>
+            <form method="POST" action="">
                 <div class="form-group row">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Nama Hotel:</label>
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Nama Akomodasi:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="staticEmail" placeholder="Hotel ...">
+                        <input type="text" class="form-control" id="staticEmail" placeholder="Hotel ... / Homestay ... /">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm-2 col-form-label">Jenis Akomodasi:</label>
+                    <div class="col-sm-2">
+                        <select id="inputState" class="form-control">
+                            <option selected>Pilihan</option>
+                            <option>Hotel</option>
+                            <option>Villa</option>
+                            <option>Homestay</option>
+                            <option>Penginapan</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -138,7 +150,6 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                             <label class="form-check-label" for="defaultCheck1">
-                                
                             </label>
                         </div>
 
@@ -155,6 +166,33 @@
                                 Default checkbox
                             </label>
                         </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="exampleFormControlTextarea1" class="col-sm-2 col-form-label">Deskripsi:</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="fotoutama" class="col-sm-2 col-form-label">Unggah Foto:</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control-file" id="fotoutama">
+                        <script type="text/javascript">$("#fotoutama").change(function(){readImage(this)})</script>
+                        <img src="#" id="foto1" width="400px" alt="preview gambar">
+                        <script type="text/javascript">
+                            function readImage(input){
+                                if(input.files && input.files[0]){
+                                    var reader = new FileReader();
+                                    reader.onload = function(e){
+                                        $('#foto1').attr('src', e.target.result);
+                                    }
+                                    reader.readAsDataURL(input.files[0]);
+                                }
+                            }
+                        </script>
                     </div>
                 </div>
             </form>

@@ -14,16 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <script>
-
-    </script>
-
     <style>
-        a {
-            color: aliceblue;
-            font-size: large;
-        }
-
         h5,
         p {
             color: aliceblue;
@@ -42,7 +33,7 @@
         <div class="content">
             <h1 style="text-align: center;">Daftarkan Akomodasi Anda Disini</h1>
             <br />
-            <form method="POST" action="">
+            <form method="POST" action="" enctype="multipart/form-data">
                 <div class="form-group row">
                     <label for="staticEmail" class="col-sm-2 col-form-label">Nama Akomodasi:</label>
                     <div class="col-sm-10">
@@ -134,7 +125,7 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                             <label class="form-check-label" for="defaultCheck1">
-                                Kantin / Foodcourt
+                                Restaurant
                             </label>
                         </div>
                     </div>
@@ -150,20 +141,21 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                             <label class="form-check-label" for="defaultCheck1">
+                                Bar
                             </label>
                         </div>
 
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                             <label class="form-check-label" for="defaultCheck1">
-                                Default checkbox
+                                Meeting Room
                             </label>
                         </div>
 
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                             <label class="form-check-label" for="defaultCheck1">
-                                Default checkbox
+                                Ball Room
                             </label>
                         </div>
                     </div>
@@ -177,22 +169,138 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="fotoutama" class="col-sm-2 col-form-label">Unggah Foto:</label>
+                    <label for="fotoutama" class="col-sm-2 col-form-label">Foto Utama:</label>
                     <div class="col-sm-10">
                         <input type="file" class="form-control-file" id="fotoutama">
-                        <script type="text/javascript">$("#fotoutama").change(function(){readImage(this)})</script>
-                        <img src="#" id="foto1" width="400px" alt="preview gambar">
                         <script type="text/javascript">
-                            function readImage(input){
-                                if(input.files && input.files[0]){
+                            $("#fotoutama").change(function() {
+                                readImage(this)
+                            })
+                        </script>
+                        <img src="#" id="foto1" width="300px" alt="preview gambar">
+                        <script type="text/javascript">
+                            function readImage(input) {
+                                if (input.files && input.files[0]) {
                                     var reader = new FileReader();
-                                    reader.onload = function(e){
+                                    reader.onload = function(e) {
                                         $('#foto1').attr('src', e.target.result);
                                     }
                                     reader.readAsDataURL(input.files[0]);
                                 }
                             }
                         </script>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="fotofoto" class="col-sm-2 col-form-label">Foto-foto:</label>
+                    <div class="col-sm-4">
+                        <input type="file" class="form-control-file" id="fotofoto">
+                        <script type="text/javascript">
+                            $("#fotofoto").change(function() {
+                                readImage2(this)
+                            })
+                        </script>
+                        <img src="#" id="foto2" width="300px" alt="preview gambar">
+                        <script type="text/javascript">
+                            function readImage2(input) {
+                                if (input.files && input.files[0]) {
+                                    var reader = new FileReader();
+                                    reader.onload = function(e) {
+                                        $('#foto2').attr('src', e.target.result);
+                                    }
+                                    reader.readAsDataURL(input.files[0]);
+                                }
+                            }
+                        </script>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="file" class="form-control-file" id="fotofoto2">
+                        <script type="text/javascript">
+                            $("#fotofoto2").change(function() {
+                                readImage3(this)
+                            })
+                        </script>
+                        <img src="#" id="foto3" width="300px" alt="preview gambar">
+                        <script type="text/javascript">
+                            function readImage3(input) {
+                                if (input.files && input.files[0]) {
+                                    var reader = new FileReader();
+                                    reader.onload = function(e) {
+                                        $('#foto3').attr('src', e.target.result);
+                                    }
+                                    reader.readAsDataURL(input.files[0]);
+                                }
+                            }
+                        </script>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="fotofoto3" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-4">
+                        <input type="file" class="form-control-file" id="fotofoto3">
+                        <script type="text/javascript">
+                            $("#fotofoto3").change(function() {
+                                readImage4(this)
+                            })
+                        </script>
+                        <img src="#" id="foto4" width="300px" alt="preview gambar">
+                        <script type="text/javascript">
+                            function readImage4(input) {
+                                if (input.files && input.files[0]) {
+                                    var reader = new FileReader();
+                                    reader.onload = function(e) {
+                                        $('#foto4').attr('src', e.target.result);
+                                    }
+                                    reader.readAsDataURL(input.files[0]);
+                                }
+                            }
+                        </script>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="file" class="form-control-file" id="fotofoto4">
+                        <script type="text/javascript">
+                            $("#fotofoto4").change(function() {
+                                readImage5(this)
+                            })
+                        </script>
+                        <img src="#" id="foto5" width="300px" alt="preview gambar">
+                        <script type="text/javascript">
+                            function readImage5(input) {
+                                if (input.files && input.files[0]) {
+                                    var reader = new FileReader();
+                                    reader.onload = function(e) {
+                                        $('#foto5').attr('src', e.target.result);
+                                    }
+                                    reader.readAsDataURL(input.files[0]);
+                                }
+                            }
+                        </script>
+                    </div>
+                </div>
+
+                <br />
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-8">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                                Jika setuju dengan <a href="">Syarat dan Ketentuan yang berlaku</a>, klik checkbox disamping *
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div style="text-align: center;" class="col-sm-6">
+                        <input type="submit" class="btn btn-primary" value="Daftar" style="width: 200px;">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div style="text-align: center;" class="col-sm-6">
+                        <input type="button" class="btn btn-danger" value="Kembali" onclick="location.href='dashboard.html'" style="width: 200px;">
                     </div>
                 </div>
             </form>
